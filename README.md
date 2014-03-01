@@ -11,6 +11,8 @@ Just clone the repository and run:
 python setup.py install
 ```
 
+Please note that the python module [pyefa](https://github.com/NoMoKeTo/pyefa) is required.
+
 #### Usage
 
 Available via
