@@ -60,10 +60,34 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Available via</p>
+<pre lang="shell"><code># For all options and complete usage, see:
+clifa -h
+clifa route -h
+# and so on
 
-<pre><code>clifa -h
+# get connections from Düsseldorf Hbf to Essen Hbf
+clifa route düsseldorf hbf essen hbf
+
+# set alias "omnom" for essen Hbf
+clifa alias add omnom essen hbf
+
+# get connections from Düsseldorf Hbf to Essen Hbf (by alias)
+clifa route düsseldorf hbf omnom
+
+# get connections from Essen Hbf (by alias) to Düsseldorf Hbf
+clifa route --from omnom --to düsseldorf hbf
+
+# set default network to vrr
+clifa network vrr
+
+# associate current wifi with address Sibyllastraße 9 in Essen
+clifa wifi add Essen "addr:Sibyllastraße 9"
+
+# from current wifi to address Hüttenstr. 25 in Düsseldorf
+clifa route Düsseldorf "addr:Hüttenstr. 25"
 </code></pre>
+
+<p>Hafe fun!</p>
       </section>
     </div>
 
