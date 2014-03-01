@@ -3,7 +3,7 @@ clifa
 
 Pretty online train connection api client for your shell written in python. Based on [pyefa](https://github.com/NoMoKeTo/pyefa).
 
-A list of supported regions can be found [here](https://github.com/NoMoKeTo/pyefa/wiki/Supported-Networks).
+A list of supported regions can be found [here](https://github.com/NoMoKeTo/pyefa/wiki/Supported-Regions).
 
 Also supports location aliases and optaining location via wifi.
 
