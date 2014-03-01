@@ -164,7 +164,7 @@ args = parser.parse_args()
 
 # NETWORK
 efa = networks.network(args.network)
-	
+
 mots = ['zug', 's-bahn', 'u-bahn', 'stadtbahn', 'tram', 'stadtbus', 'regionalbus', 'schnellbus', 'seilbahn', 'schiff', 'ast', 'sonstige']
 
 if args.subparser == 'route':
