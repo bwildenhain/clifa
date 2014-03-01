@@ -15,5 +15,5 @@ setup(name='clifa',
 		'Programming Language :: Python',
 		'Natural Language :: English',
 		'License :: OSI Approved :: Apache Software License'],
-	requires=['pyefa'],
+	install_requires=['pyefa'],
 	)
