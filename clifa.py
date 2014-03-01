@@ -227,7 +227,9 @@ if args.subparser == 'route':
 			sys.exit(1)	
 	else:
 		exclude = []
-		
+	
+	if sys.stdout.isatty():
+		sys.stdout = os.popen('less -R', 'w')
 	print efa.tripRequest(origin=point_from, destination=point_to, via=point_via, time=time, timetype=timetype, max_interchanges=max_interchanges, select_interchange_by=args.prefer, use_near_stops=args.proximity, train_type=args.include, walk_speed=args.walk_speed, with_bike=args.bike, apitype=args.api)
 	
 	
