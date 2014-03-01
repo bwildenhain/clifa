@@ -1,7 +1,9 @@
 clifa
 =====
 
-Pretty EFA-Client for your shell written in python. Based on [pyefa](https://github.com/NoMoKeTo/pyefa).
+Pretty online train connection api client for your shell written in python. Based on [pyefa](https://github.com/NoMoKeTo/pyefa).
+
+Also supports location aliases and optaining location via wifi.
 
 ![Screenshot](https://raw.github.com/NoMoKeTo/clifa/master/screenshot.png)
 
