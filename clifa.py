@@ -74,8 +74,14 @@ def wifimatch():
 def oneword(desc):
 	return ('"%s"' % desc) if ' ' in desc else desc
 	
+# Load defaults	
+try: 
+	default_network = open(os.path.expanduser('~/.clifa/network'), 'r').read().strip()
+except:
+	default_network = 'vrr'
+	
 parser = argparse.ArgumentParser(prog='clifa', description='Inofficial Client vor EFA-Backends')        
-parser.add_argument('-N', '--network', metavar='network', help='Network to use. Currently supported: %s'%', '.join(networks.supported), choices=networks.supported, default='vrr')
+parser.add_argument('-N', '--network', metavar='network', help='Network to use. (Default: %s) Currently supported: %s' % (default_network, ', '.join(networks.supported)), choices=networks.supported, default=default_network)
 parser.add_argument('-a', '--api', metavar='xml|json|both', choices=('xml', 'json', 'both'), help='API to use. For maximum information, use both (default). XML and JSON may have information missing but may be faster, as they need only one request.', default='both')
 subparsers = parser.add_subparsers(dest='subparser', title='commands')
 
@@ -142,11 +148,17 @@ parser_wifi.add_argument('stop', nargs='?', help="""Stop name. In case you want 
 parser_wifi.add_argument('-s', '--ssid', help='SSID of the WiFi. If ommited, no SSID matching will occur.')
 parser_wifi.add_argument('-m', '--mac', help='Mac-Adress of the WiFi. If ommited, no Mac matching will occur.\n\nIf both are omitted, mac and ssid of the wifi currently connected to will be used.')
 
-# WEITERE PARSER
-parser_route = subparsers.add_parser('departures', usage=usage_route, help='List departures at specific Point')
-parser_route = subparsers.add_parser('search', usage=usage_route, help='Search for stations')
-parser_route = subparsers.add_parser('network', usage=usage_route, help='Set default network')
-parser_route = subparsers.add_parser('set', usage=usage_route, help='Manage default route options')
+# WIFI
+usage_network = """
+       network name
+""".strip()
+parser_wifi = subparsers.add_parser('network', usage=usage_network, help='Set default network')
+parser_wifi.add_argument('name', help='Network to use. (Default: %s) Currently supported: %s' % (default_network, ', '.join(networks.supported)), choices=networks.supported, default=default_network)
+
+# To be implemented
+#parser_route = subparsers.add_parser('departures', usage=usage_route, help='List departures at specific point')
+#parser_route = subparsers.add_parser('search', usage=usage_route, help='Search for stations')
+#parser_route = subparsers.add_parser('set', usage=usage_route, help='Manage default route options')
 
 args = parser.parse_args()
 
@@ -341,6 +353,13 @@ elif args.subparser == 'wifi':
 		
 		for item in matches:
 			print 'MAC:%s SSID:%s %s %s' % (oneword(item['mac']), oneword(item['ssid']), oneword(item['city']), oneword(item['stop']))
+
+elif args.subparser == 'network':
+	try: 
+		os.mkdir(os.path.expanduser('~/.clifa'))
+	except:
+		pass
+	open(os.path.expanduser('~/.clifa/network'), 'w').write(args.name)
 	
 else:
 	print 'Not yet supported'

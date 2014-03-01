@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 setup(name='clifa',
-	version='0.1.0',
+	version='0.2.0',
 	description='Pretty online train connection api client for your shell. Based on pyefa.',
 	author='Nils Martin Klünder',
 	author_email='nomoketo@nomoketo.de',
