@@ -60,7 +60,7 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre lang="shell"><code># For all options and complete usage, see:
+<pre lang="Shell"><code># For all options and complete usage, see:
 clifa -h
 clifa route -h
 # and so on
@@ -83,8 +83,9 @@ clifa network vrr
 # associate current wifi with address Sibyllastraße 9 in Essen
 clifa wifi add Essen "addr:Sibyllastraße 9"
 
-# from current wifi to address Hüttenstr. 25 in Düsseldorf
-clifa route Düsseldorf "addr:Hüttenstr. 25"
+# from current wifi to address via Oberhausen Hbf
+clifa alias add chaosdorf Düsseldorf "addr:Hüttenstr. 25"
+clifa route --to chaosdorf --via Oberhausen Hbf
 </code></pre>
 
 <p>Hafe fun!</p>
