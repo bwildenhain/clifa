@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 setup(name='clifa',
-	version='0.2.0',
+	version='0.2.1',
 	description='Pretty online train connection api client for your shell. Based on pyefa.',
 	author='Nils Martin Klünder',
 	author_email='nomoketo@nomoketo.de',
 	url='https://github.com/NoMoKeTo/pyefa',
 	license='Apache',
-	py_modules=['clifa'],
+	py_modules=['clifa', 'clifa_launch'],
 	entry_points={
 		'console_scripts': [
-			'clifa = clifa'
+			'clifa = clifa_launch:launch'
 		]
 	},
 	classifiers=[
