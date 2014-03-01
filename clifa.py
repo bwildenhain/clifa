@@ -137,9 +137,9 @@ parser_alias.add_argument('stop', nargs='?', help="""Stop name. In case you want
 # WIFI
 usage_wifi = """
        wifi list
-       wifi add [ -s ssid ] [ -m mac ] city stop
+       wifi [ -s ssid ] [ -m mac ] add city stop
        wifi current
-       wifi delete [ -s ssid ] [ -m mac ]
+       wifi [ -s ssid ] [ -m mac ] delete
 """.strip()
 parser_wifi = subparsers.add_parser('wifi', usage=usage_wifi, help='Configure locating by wifi recognition')
 parser_wifi.add_argument('command', nargs=1, help=argparse.SUPPRESS, choices=('list', 'add', 'current', 'delete'))
