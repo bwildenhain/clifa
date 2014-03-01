@@ -7,18 +7,25 @@ Also supports location aliases and optaining location via wifi.
 
 ![Screenshot](https://raw.github.com/NoMoKeTo/clifa/master/screenshot.png)
 
-#### Install
+## Install
 
-Please note that the python module [pyefa](https://github.com/NoMoKeTo/pyefa) is required.
+Just install it from the [Python Package Index](https://pypi.python.org/pypi/clifa):
+
+```
+pip install clifa
+```
+
+### Install from source
+
+*The Python-module __[pyefa](https://github.com/NoMoKeTo/pyefa)__ is required.*
 
 Just clone the repository and run:
 
 ```
-sudo pip install bs4 
 python setup.py install
 ```
 
-#### Usage
+## Usage
 
 Available via
 
