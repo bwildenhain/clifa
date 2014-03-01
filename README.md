@@ -1,7 +1,7 @@
 clifa
 =====
 
-Pretty online train connection api client for your shell written in python. Based on [pyefa](https://github.com/NoMoKeTo/pyefa).
+Pretty online train connection api client for your shell written in python. Based on [pyefa](https://nomoketo.github.io/pyefa).
 
 A list of supported regions can be found [here](https://github.com/NoMoKeTo/pyefa/wiki/Supported-Regions).
 
