@@ -212,10 +212,10 @@ if args.subparser == 'route':
 		
 	if args.date is None:
 		date = [now.day, now.month, now.year]
-	elif re.match('^[0-9]{2}.[0-9]{2}.[0-9]{4}$', args.time):
-		date = [int(i) for i in args.time.split('.')]
-	elif re.match('^[0-9]{2}.[0-9]{2}.$', args.time):
-		date = [int(i) for i in args.time[0:-1].split('.')] + [now.year]
+	elif re.match('^[0-9]{2}.[0-9]{2}.[0-9]{4}$', args.date):
+		date = [int(i) for i in args.date.split('.')]
+	elif re.match('^[0-9]{2}.[0-9]{2}.$', args.date):
+		date = [int(i) for i in args.date[0:-1].split('.')] + [now.year]
 	else:
 		parser_route.error('invalid date format')
 		sys.exit(1)	
